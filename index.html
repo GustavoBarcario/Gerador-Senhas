@@ -2,24 +2,40 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gerador de Senhas</title>
+    <meta name="keywords" content="Gerador de senhas" />
+
     <link rel="stylesheet" href="estilos.css" />
+    <title>Gerador de senha</title>
   </head>
   <body>
-    <img class="logo" src="imagens/logo.png" alt="Gerador de senha logo" />
+    <img class="logo" src="imagens/logo.png" alt="Gerador senha logo" />
 
-    <main class="container-input">
-      <span>Tamanho <span id="valor"></span>caracaters</span>
-      <input class="slider" type="range" min="5" max="25" value="15" />
+    <div class="container-input">
+      <span>Tamanho <span id="valor"></span> caracteres</span>
+      <input
+        id="slider"
+        class="slider"
+        type="range"
+        min="5"
+        max="25"
+        value="15"
+      />
 
-      <button id="button" class="button-cta">Gerar Senha</button>
-    </main>
+      <button id="button" class="button-cta" onclick="generatePassword()">
+        Gerar senha
+      </button>
+    </div>
 
-    <div id="container-password" class="container-password hide">
+    <div
+      id="container-password"
+      onclick="copyPassword()"
+      class="container-password hide"
+    >
       <span class="title">Sua senha gerada foi:</span>
-      <span id="password" class="password">45151515151</span>
-      <span>Click na senha para copiar. 👆</span>
+      <span id="password" class="password"></span>
+      <span class="tooltip">Clique na senha para copiar. 👆</span>
     </div>
 
     <script src="script.js"></script>
